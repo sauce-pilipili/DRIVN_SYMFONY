@@ -1,0 +1,87 @@
+:root{
+    --main-color: #366DB4;
+    --second-color: #F6A456;
+    --bg-color: #E3EDFF;
+    --color-form: #424242;
+    --color-text: #153865;
+    --color-white: #FFF;
+    --font: 'Montserrat', sans-serif;
+    --size-h1: 3rem;
+    --size-h2: 2.5rem;
+    --size-h3: 1.313rem;
+    --size-h4: 1.875rem;
+    --size-h5: 1.313rem;
+    --size-p: 0.938rem;
+}
+
+
+* {
+    box-sizing: content-box;
+    margin: 0;
+    padding: 0;
+}
+  
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: var(--second-color);
+}
+  
+li {
+    list-style-type: none;
+}
+
+  
+body {
+    margin: 0;
+    background-color: var(--bg-color);
+}
+
+p, a {
+    font-size: var(--size-p);
+}
+
+h1, h2, h3, h4, h5, p, a, li, span {
+    font-family: var(--font);
+    color: var(--color-text)
+}
+
+h1 {
+    font-size: var(--size-h1);
+}
+
+h2 {
+    font-size: var(--size-h2);
+}
+
+h3 {
+    font-size: var(--size-h3);
+}
+
+h4 {
+    font-size: var(--size-h4);
+}
+
+h5 {
+    font-size: var(--size-h5);
+}
+
+
+@media (max-width:1099px) {
+    h1 {
+        font-size: calc( var(--size-h1) / 2 );
+    }
+    h2 {
+        font-size: calc( var(--size-h2) / 2 );
+    }
+    h3 {
+        font-size: calc( var(--size-h3) / 1.5);    }
+    h4 {
+        font-size: calc( var(--size-h4) / 2 );
+    }
+}

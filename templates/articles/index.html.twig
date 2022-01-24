@@ -1,0 +1,52 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}Liste des articles{% endblock %}
+{% block body %}
+    <div class="main">
+        {{ include('_includes/_navigation.html.twig') }}
+        <div class="content">
+            <div class="container ">
+                <div class="bloc-back-office-superieur">
+                    <h1>Les articles</h1>
+                    <div class="bloc-back-office-superieur-button">
+                        <div class="bloc-back-office-superieur-input">
+                            <input id="search" type="text" onkeyup="AjaxSearch(this.value)" placeholder="Recherchez un article…">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                                <path id="search"
+                                      d="M10,4a6,6,0,1,0,6,6A6,6,0,0,0,10,4ZM2,10a8,8,0,1,1,14.32,4.906l5.387,5.387a1,1,0,0,1-1.414,1.414L14.906,16.32A8,8,0,0,1,2,10Z"
+                                      transform="translate(-2 -2)" fill="#0d0d0d"/>
+                            </svg>
+                        </div>
+                        <a class="bloc-back-office-superieur-bouton-1" href="{{ path('articles_new') }}">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14.07" height="14.07"
+                                 viewBox="0 0 14.07 14.07">
+                                <path id="ajouter"
+                                      d="M11.035,4a.879.879,0,0,1,.879.879v5.276h5.276a.879.879,0,1,1,0,1.759H11.915v5.276a.879.879,0,1,1-1.759,0V11.915H4.879a.879.879,0,0,1,0-1.759h5.276V4.879A.879.879,0,0,1,11.035,4Z"
+                                      transform="translate(-4 -4)" fill="#0d0d0d"/>
+                            </svg>
+                            Ajouter un article</a>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Titre de l'article</th>
+                        <th>Date de création</th>
+                        <th>Catégorie</th>
+                        <th style="width: 8%">Supprimer</th>
+                    </tr>
+                    </thead>
+                    <tbody id="bodylist">
+                    {{ include('articles/_contentArticles.html.twig') }}
+                    <!--<tr>
+                        <td colspan="7">no records found</td>
+                    </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('js/Search.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,167 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Piloter votre entreprise{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="section-bg-right margin-top-100">
+        <div class="container-large section-col-2">
+            <div class="cadre-text">
+                <h1>Visualisation de vos données comptables</h1>
+                <p class="font-bold">Avec nous, vous allez comprendre votre comptabilité.</p>
+                <p>Nous vous proposons une solution qui va améliorer votre compréhension de ces données et vous permettre de les déchiffrer.</p>
+                <p>Ne perdez plus votre temps, notre solution vous permet de visualiser rapidement et facilement les données qui vont vous permettre de gérer votre entreprise.</p>
+            </div>
+            <div class="cadre-img">
+                <img src="{{ asset('img/solution-gestion.png') }}" alt="Gestion des données comptables">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col-row">
+                    <div class="row">
+                        <h2>Vous voulez tester notre solution ?</h2>
+                    </div>
+                    <div class="form-demo" >
+                        {{ form_start(formDemo1, {'attr': {'class': 'form-demo'}}) }}
+                        {{ form_row(formDemo1.email) }}
+                        {#    <input name="email" type="email" placeholder="Votre email">#}
+                        {#    <input class="button-form" type="submit" value="Demander une démo">#}
+                        {{ form_end(formDemo1) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large section-col-2">
+        <div class="cadre-text">
+            <div class="d-flex-column gap-20">
+                <h2>Piloter votre entreprise</h2>
+                <p>Avec DRIV’N, nous avons à cœur de vous accompagner dans vos prises de décision. Pour cela, nous avons conçu un logiciel sous forme de tableau de bord utilisant la technique de la visualisation de données.</p>
+            </div>
+        </div>
+        <div class="cadre-img">
+            <img src="{{ asset('img/gestion-d-entreprise.png') }}" alt="Gestion d'entreprise">
+        </div>
+    </section>
+
+    <section class="container-large section-col">
+        <div class="row">
+            <div class="bloc-white">
+                <h3>La trésorerie</h3>
+                <p>A quel moment de l'année sommes nous en difficulté, à quel moment du mois devons nous être vigilant ? Nous nous servirons du passé pour préparer l'avenir.</p>
+            </div>
+            <div class="bloc-white">
+                <h3>Suivi des créances</h3>
+                <p>Quel client vous dois de l'argent ? Combien ? Depuis quand ? Retrouvez la somme d'argent qui va devenir disponible.</p>
+            </div>
+            <div class="bloc-white">
+                <h3>Les charges de fonctionnement</h3>
+                <p>Il est indispensable de séparer nos charges de fonctionnement de nos achats. Qu'est ce qui nous fait gonfler les chiffres ? Sur quelle dépense pouvons nous économiser ?</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-bg-3">
+        <div class="container-large section-col-center">
+            <div class="row-1">
+                <h2 class="font-white font-mobile">Mais aussi...</h2>
+            </div>
+            <div class="row-2">
+                <div class="bloc-white-10">
+                    <h3>Chiffres d'affaires</h3>
+                    <p>Vous pourrez gérer votre chiffres d'affaires et tout visualiser d'un seul coup d'œil. Le suivi de votre chiffres d'affaires est simple.</p>
+                    <p class="font-bold">Comparaison mensuel</p>
+                    <p class="font-bold">Tendances du CA</p>
+                    <p class="font-bold">Nombre de client</p>
+                </div>
+                <div class="bloc-white-10">
+                    <h3>Suivi des fournisseurs</h3>
+                    <p>Notre solution vous propose d'avoir un suivi simplifié de vos différents fournisseurs afin d'avoir une vision globale.</p>
+                    <p class="font-bold">Dettes fournisseurs en cours</p>
+                    <p class="font-bold">Délai de paiement des dettes</p>
+                    <p class="font-bold">Distribution des fournisseurs</p>
+                    <p></p>
+                </div>
+                <div class="bloc-white-10">
+                    <h3>Achats</h3>
+                    <p>Votre entreprise génère de la trésorerie et vous pouvez donc, avec notre solution, suivre le cash restant, les encaissements....</p>
+                    <p class="font-bold">Répartition des achats</p>
+                    <p class="font-bold">Evolution des achats</p>
+                </div>
+            </div>
+            <div class="row-2">
+                <div class="bloc-white-10">
+                    <h3>Charges de personnel</h3>
+                    <p>Avec notre solution, le suivi des charges de personnel a été simplifié pour vous permettre de tout gérer facilement.</p>
+                    <p class="font-bold">Projection des charges</p>
+                    <p class="font-bold">Répartition des charges</p>
+                    <p class="font-bold">Evolution des charges</p>
+                </div>
+                <div class="bloc-white-10">
+                    <h3>Charges externes</h3>
+                    <p>Vous pourrez également suivre et gérer toutes vos charges externes dans un tableau de bord claire.</p>
+                    <p class="font-bold">Poids des charges de fonctionnement</p>
+                    <p class="font-bold">Répartition des charges</p>
+                    <p></p>
+                </div>
+                <div class="bloc-white-10">
+                    <h3>Et bien plus encore !</h3>
+                    <p>Le tableau de bord est  personnalisable, le but est de le faire grandir ensemble, avec vos retours et besoins…</p>
+                    <div>
+                        <a class="button-1" href="{{ path('contact') }}">Voir les tarifs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large section-col-2">
+        <div class="cadre-img">
+            <img src="{{ asset('img/gestion-d-entreprise.png') }}" alt="Gestion d'entreprise">
+        </div>
+        <div class="cadre-text">
+            <div class="d-flex-column gap-20">
+                <h2>Acheter ou vendre votre entreprise</h2>
+                <p>Grâce à notre solution, vous aurez également accès à des rapports supplémentaires sur la valorisation de votre entreprise ou de celle que vous souhaitez acheter. Dans le cas d'un achat, vous pourrez consulter les loyers, les salaires du dirigeant et bien d'autres encore.</p>
+                <div>
+                    <a class="button-1" href="{{ path('contact') }}">Contactez-nous</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col">
+                    <div class="row">
+                        <h2 class="text-center">Demander votre démo gratuitement</h2>
+                        <p class="text-center">Vous êtes intéressé par nos solutions ? Mais vous n'êtes pas encore sûre ! N'hésitez pas à demander notre démo gratuite pour tester nos solutions.</p>
+                    </div>
+                    <div class="form-demo" >
+                        {{ form_start(formDemo2, {'attr': {'class': 'form-demo'}}) }}
+                        {{ form_row(formDemo2.email) }}
+                        {#    <input name="email" type="email" placeholder="Votre email">#}
+                        {#    <input class="button-form" type="submit" value="Demander une démo">#}
+                        {{ form_end(formDemo2) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,28 @@
+{{ form_start(form) }}
+<p>Ajoutez le titre de l'article</p>
+{{ form_row(form.title) }}
+<p>Ajoutez la catégorie de l'article</p>
+{{ form_row(form.categorie) }}
+<p>Ajoutez la meta description de l'article</p>
+{{ form_row(form.metaDescription) }}
+<p>Ajoutez une image principale pour l'article</p>
+<div class="upload-1">
+    {{ form_row(form.imageEnAvant,{'attr': {'class': 'article_photoEnAvant', 'onchange':"handleFilesImageEnAvant(files)",'id' : 'upload', 'multiple name': 'file'}}) }}
+    <div class="preview-image"><label for="upload"><span id="previewAvant">{% if article.imageEnAvant != null %}
+        {% if app.request.attributes.get('_route') == 'articles_edit' %}
+                    <img class="image-preview" src="{{ asset('/uploads/'~article.imageEnAvant) }}" alt="">
+                {% endif %}
+    {% endif %}</span></label></div>
+    <span id="file-select-button-1" class="browse button black">{% if app.request.attributes.get('_route') == 'articles_new' %}Ajouter une photo {% endif %}{% if app.request.attributes.get('_route') == 'articles_edit' %}Modifier la photo {% endif %}<i class="fa fa-plus"></i></span>
+</div>
+<p>Ajoutez une légende pour la photo principale</p>
+{{ form_row(form.LegendeImageEnAvant) }}
+<p>Ajoutez le contenu de l'article</p>
+{{ form_row(form.content) }}
+<button class="bouton-1" style="border: none">{% if app.request.attributes.get('_route') == 'articles_new' %}{{ button_label|default('Enregistrer') }}{% endif %}{% if app.request.attributes.get('_route') == 'articles_edit' %}{{ button_label|default('Mettre à jour') }}{% endif %}</button>
+{{ form_end(form) }}
+<script>
+    $('#file-select-button-1').click(function () {
+        $('.upload-1 input').click();
+    });
+</script>

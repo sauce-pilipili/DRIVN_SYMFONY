@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="section-bg-right">
+        <div class="container-large section-col">
+            <div class="cadre-text d-column gap-20">
+                <h1 class="text-center">Contact</h1>
+                <p class="text-center">Pout toute demande d’information et prise de contact, vous pouvez nous joindre en
+                    remplissant le formulaire de demande de contact. Nous vous répondrons dans les plus brefs
+                    délais.</p>
+            </div>
+            {{ form_start(form) }}
+            <div class="form container-small">
+                <div class="d-flex-column gap-10">
+                    <label for="name">Votre prénom</label>
+                    {{ form_row(form.name) }}
+                </div>
+                <div class="d-flex-column gap-10">
+                    <label for="mail">Votre adresse mail</label>
+                    {{ form_row(form.email) }}
+                </div>
+                <div class="d-flex-column gap-10">
+                    <label for="messag">Votre demande</label>
+                    {{ form_row(form.message) }}
+                </div>
+                <div>
+                    <input class="button-1" type="submit" value="Envoyer ma demande">
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </section>
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col">
+                    <div class="row">
+                        <h2 class="text-center">Demander votre démo gratuitement</h2>
+                        <p class="text-center">Vous êtes intéressé par nos solutions ? Mais vous n'êtes pas encore sûre
+                            ! N'hésitez pas à demander notre démo gratuite pour tester nos solutions.</p>
+                    </div>
+                    <span class="form-demo" >
+                        {{ form_start(formDemo, {'attr': {'class': 'form-demo'}}) }}
+                        {{ form_row(formDemo.email) }}
+                        {{ form_end(formDemo) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

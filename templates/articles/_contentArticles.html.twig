@@ -1,0 +1,17 @@
+{% for article in articles %}
+    <tr>
+        <td><a style="cursor:pointer" href="{{ path('articles_edit', {'id': article.id}) }}">
+                {{ article.title }}
+            </a></td>
+
+        <td>{{ article.createdDate ? article.createdDate|date('Y-m-d H:i:s') : '' }}</td>
+        <td>{{ article.categorie.name }}</td>
+        <td>
+            {{ include('articles/_delete_form.html.twig') }}
+        </td>
+    </tr>
+{% else %}
+    <tr>
+        <td colspan="28">pas de résultat</td>
+    </tr>
+{% endfor %}

@@ -1,0 +1,14 @@
+:root {
+    /********* Connexion *********/
+    --green-bg: #6b188c;
+    --grey-border: #a7a7a7c0;
+
+    --grey-font: #4a4659;
+
+    /*couleur des lignes index en back office */
+    --hover-color: #452145;
+
+    --main-bg: #F8F8F8;
+    --main-font: "Montserrat", sans-serif;
+    --font-title: "Spartan", sans-serif;
+}

@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Devenir partenaire{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="section-bg-right">
+        <div class="container-large section-col">
+            <div class="cadre-text d-column gap-20">
+                <h1 class="text-center">Devenir partenaire</h1>
+                <p class="text-center">Devenir partenaire de DRIVN vous permettra de bénéficier de <span
+                            class="font-bold">10% de réduction</span> pour vous mais aussi vos clients.</p>
+            </div>
+            <form class="form container-small" action="">
+                <div class="d-flex-column gap-10">
+                    <label for="name">Votre prénom</label>
+                    <input name="name" type="text" placeholder="Ecrivez votre prénom">
+                </div>
+                <div class="d-flex-column gap-10">
+                    <label for="mail">Votre adresse mail</label>
+                    <input type="email" placeholder="Indiquez votre adresse mail">
+                </div>
+                <div class="d-flex-column gap-10">
+                    <label for="message">Pourquoi devenir partenaire ?</label>
+                    <textarea name="message" id="message" cols="30" rows="10">Ecrivez vos motivations</textarea>
+                </div>
+                <div>
+                    <input class="button-1" type="submit" value="Envoyer ma demande">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col">
+                    <div class="row">
+                        <h2 class="text-center">Demander votre démo gratuitement</h2>
+                        <p class="text-center">Vous êtes intéressé par nos solutions ? Mais vous n'êtes pas encore sûre
+                            ! N'hésitez pas à demander notre démo gratuite pour tester nos solutions.</p>
+                    </div>
+                    <form class="form-demo" action="">
+                        <input type="email" placeholder="Votre email">
+                        <input class="button-form" type="submit" value="Demander une démo">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,82 @@
+<header>
+    <div class="bloc-header">
+        <a href="{{ path('index') }}">
+            <img id="logo" src="{{ asset('img/logo-drivn.png') }}" alt="Logo de DRIVN">
+        </a>
+        <nav>
+            <ul>
+                <li>
+                    <a href="{{ path('index') }}">Accueil</a>
+                </li>
+                <li>
+                    <a href="{{ path('solution_1') }}">Solution</a>
+                </li>
+                <li>
+                    <a href="{{ path('tarif') }}">Tarifs</a>
+                </li>
+                <li>
+                    <a href="{{ path('blog',{'categorie': 'tous'}) }}">Blog</a>
+                </li>
+                <li>
+                    <a href="{{ path('contact') }}">Contact</a>
+                </li>
+                <li>
+                    <a href="{{ path('dashboard') }}">Accès au dashboard</a>
+                </li>
+                <li>
+                    <a class="button-1" href="{{ path('demo') }}">Demander une démo</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-burger">
+            <input type="checkbox" id="checkbox-2"/>
+            <label for="checkbox-2">
+                <span class="barre-classique-1"></span>
+                <span class="barre-classique-2"></span>
+                <span class="barre-classique-3"></span>
+            </label>
+            <nav class="menu">
+                <input type="checkbox" id="checkbox-2"/>
+                <label for="checkbox-2">
+                    <span id="logo-burger">
+                        <a href="{{ path('index') }}">
+                            <img id="logo" src="{{ asset('img/logo-drivn.png') }}" alt="Logo de DRIVN">
+                        </a>
+                    </span>
+                    <span class="menu-burger-open">
+                        <span class="barre-1"></span>
+                        <span class="barre-2"></span>
+                        <span class="barre-3"></span>
+                    </span>
+                </label>
+                <div class="item-menu-burger">
+                    <div class="item-col1">
+                        <ul>
+                            <li>
+                                <a href="{{ path('index') }}">Accueil</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('solution_1') }}">Solution</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('tarif') }}">Tarifs</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('blog',{'categorie': 'tous'}) }}">Blog</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contact') }}">Contact</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('dashboard') }}">Accès au dashboard</a>
+                            </li>
+                            <li>
+                                <a class="button-1" href="{{ path('demo') }}">Demander une démo</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Accès à votre dashboard{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-large section-col">
+        <h1 class="text-center">Accès au dashboard</h1>
+        <div>
+            <h2 class="text-center">Dashboard</h2>
+        </div>
+        <div>
+            <p class="text-center">Vous souhaitez en faire plus ?</p>
+            <a class="text-center d-flex justify-content-center" href="">Accéder au Dashboard depuis l'application web</a>
+        </div>
+    </section>
+
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,12 @@
+{{ form_start(form) }}
+<p>Ajoutez un nom de catégorie</p>
+    {{ form_row(form.Name) }}
+<button class="bouton-1" style="border: none">
+    {% if app.request.attributes.get('_route') == 'categories_new' %}
+        {{ button_label|default('Enregistrer') }}
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'categories_edit' %}
+        {{ button_label|default('Mettre à jour') }}
+    {% endif %}
+</button>
+{{ form_end(form) }}

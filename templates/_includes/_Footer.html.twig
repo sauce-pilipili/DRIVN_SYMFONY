@@ -1,0 +1,54 @@
+<footer>
+    <div class="container-xlarge footer">
+        <div class="row-1">
+            <div>
+                <a href="{{ path('index') }}">
+                    <img id="logo" src="{{ asset('img/logo-blanc.png') }}" alt="Logo de DRIVN">
+                </a>
+            </div>
+            <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="{{ path('index') }}">Accueil</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('solution_1') }}">Solution</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tarif') }}">Tarifs</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('blog',{categorie : 'tous'}) }}">Blog</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('faq') }}">FAQ</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('contact') }}">Contact</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('partenariat') }}">Devenir partenaire</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="row-2"></div>
+        <div class="row-3">
+            <div class="col-1">
+                <a href="#">
+                    <img src="{{ asset('img/facebook.svg') }}" alt="Facebook">
+                </a>
+                <a href="#">
+                    <img src="{{ asset('img/instagram.svg') }}" alt="Instagram">
+                </a>
+            </div>
+            <div class="col-2">
+                <p>© DRIVN 2021</p>
+                <p>|</p>
+                <a href="{{ path('legals') }}">Mentions légales</a>
+            </div>
+        </div>
+    </div>
+</footer>

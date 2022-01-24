@@ -1,0 +1,166 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Votre outil de visualisation de données{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-large section-col-center">
+        <div class="row-1">
+            <h2>Tarifs</h2>
+            <p>Selon la solution dont vous avez besoin, nous vous proposons des tarifs qui comprennent les frais de dossier ainsi que l'accès complet à la solution choisie.</p>
+            <div class="bloc-price">
+                <a class="button-on left" href="{{ path('tarif') }}">Mensuel</a>
+                <a class="button-off right" href="{{ path('tarif_annuel') }}">Annuel</a>
+            </div>
+        </div>
+        <div class="row-2">
+            <div class="bloc-white">
+                <div class="d-flex-column gap-40">
+                    <div class="d-flex-column gap-20">
+                        <div class="d-flex-column gap-15">
+                            <p>DEFI GESTION</p>
+                            <p>A partir de</p>
+                            <div class="d-flex align-items-center gap-15">
+                                <p>
+                                    <span class="price">97</span>
+                                    <span class="price">€</span>
+                                </p>
+                                <p class="price-desc">HT / mois</p>
+                            </div>
+                        </div>
+                        <div class="line-price"></div>
+                        <div>
+                            <p>Solution pour la gestion d'entreprise</p>
+                            <ul class="d-flex-column gap-10">
+                                <li>√ Mises à jour illimités</li>
+                                <li>√ Accès au logiciel 24h/24 et 7j/7</li>
+                                <li>√ Export de vos données</li>
+                            </ul>
+                            <p>En option : scénario prévisionnel</p>
+                            <p class="font-bold">50 €  / mois</P>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="button-1" href="#">S'abonner</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-white">
+                <div class="d-flex-column gap-40">
+                    <div class="d-flex-column gap-20">
+                        <div class="d-flex-column gap-15">
+                            <p>DEFI GESTION</p>
+                            <p class="price">A venir</p>
+                        </div>
+                        <div class="line-price"></div>
+                        <div class="d-flex-column gap-10">
+                            <p>Solution pour vendre son entreprise</p>
+                            <p>√ Mises à jour illimités</p>
+                            <p>√ Accès au logiciel 24h/24 et 7j/7</p>
+                            <p>√ Export de vos données</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="button-2" href="{{ path('contact') }}">Contactez-nous</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-white">
+                <div class="d-flex-column gap-40">
+                    <div class="d-flex-column gap-20">
+                        <div class="d-flex-column gap-15">
+                            <p>DEFI ACQUISITION</p>
+                            <p class="price">A venir</p>
+                        </div>
+                        <div class="line-price"></div>
+                        <div class="d-flex-column gap-10">
+                            <p>Solution pour acheter une entreprise</p>
+                            <p>√ Mises à jour illimités</p>
+                            <p>√ Accès au logiciel 24h/24 et 7j/7</p>
+                            <p>√ Export de vos données</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="button-2" href="{{ path('contact') }}">Contactez-nous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-3">
+            <img src="{{ asset('img/picto-securite.svg') }}" alt="">
+            <p class="text-center">Le paiement de l’abonnement est sécurisé</p>
+        </div>
+    </section>
+
+    <section class="section-bg-3">
+        <div class="container-large section-col-center">
+            <h2 class="text-center font-white font-mobile">Comment ça fonctionne ?</h2>
+            <div class="row-2">
+                <div class="bloc-white">
+                    <div class="text-center cadre-text">
+                        <div class="number">1</div>
+                        <h4>Paiement</h4>
+                        <p>Le paiement est réalisé via la plateforme Stripe, vous pouvez payer par carte bancaire et vous aurez ainsi accès à nos solutions.</p>
+                    </div>
+                </div>
+                <div class="cadre-arrow">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+                <div class="bloc-white">
+                    <div class="text-center cadre-text">
+                        <div class="number">2</div>
+                        <h4>Confirmation</h4>
+                        <p>Après le paiement, vous recevrez un mail de confirmation avec le lien vers la solution et l'ensemble du processus.</p>
+                    </div>
+                </div>
+                <div class="cadre-arrow">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+                <div class="bloc-white">
+                    <div class="text-center cadre-text">
+                        <div class="number">3</div>
+                        <h4>Configuration</h4>
+                        <p>Intégration de vos données afin d’avoir une visualisation globale et claire grâce à nos différentes solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row-3">
+                <div>
+                    <img src="{{ asset('img/windows.svg') }}" alt="Windows">
+                    <img src="{{ asset('img/apple.svg') }}" alt="Apple">
+                    <img src="{{ asset('img/ios.svg') }}" alt="ios">
+                    <img src="{{ asset('img/android.svg') }}" alt="Android">
+                </div>
+                <p class="font-white font-mobile">Disponible sur IOS, Android, Mac et PC</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col">
+                    <div class="row">
+                        <h2 class="text-center">Demander votre démo gratuitement</h2>
+                        <p class="text-center">Vous êtes intéressé par nos solutions ? Mais vous n'êtes pas encore sûre ! N'hésitez pas à demander notre démo gratuite pour tester nos solutions.</p>
+                    </div>
+                    <sapn class="form-demo" >
+                        {{ form_start(formDemo, {'attr': {'class': 'form-demo'}}) }}
+                        {{ form_row(formDemo.email) }}
+                        {{ form_end(formDemo) }}
+                    </sapn>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

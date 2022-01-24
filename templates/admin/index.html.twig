@@ -1,0 +1,21 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}DRIVN - Back-office{% endblock %}
+{% block body %}
+    <div class="main-acceuil">
+        {{ include('_includes/_navigation.html.twig') }}
+        <div class="content">
+            <div class="back-central-container margin-top">
+                {{ include('_includes/AcceuilAdminView.html.twig') }}
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/aceuilAdminView.css') }}">
+{% endblock %}
+

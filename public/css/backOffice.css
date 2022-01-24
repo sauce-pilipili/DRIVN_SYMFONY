@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--grey-font);
+    font-family: var(--main-font);
+}
+
+p {
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--main-bg);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+}
+
+/****************** STYLE DE LA PAGE ***********************/
+
+.main {
+    display: flex;
+    height: 100%;
+    min-height: 100vh;
+}
+.h1{
+    font-size: 40px;
+}
+
+/*************************GESTION ALERTE MESSAGE FLASH****************************/
+.greenalert{
+    color: #158425;
+}
+.redalert{
+    color: #cd0b0b;
+}
+/****************** STYLE DE LA BARRE DE NAVIGATION ***********************/
+
+.navigation {
+    background-color: white;
+    width: 20%;
+    padding: 40px 0 0 30px;
+    position: absolute;
+}
+
+
+.navigation-knp {
+    background-color: white;
+    width: 20%;
+
+    top: 0;
+}
+
+.logoNav img {
+    width: 70px;
+}
+
+.navigation h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    margin-top: 25px;
+}
+
+.navigation-list p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+}
+
+.navigation-list ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 44px;
+    gap: 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+}
+
+.navigation-list ul a:active {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 900;
+}
+
+.navigation-list li:hover:before {
+    content: "";
+    width: 11px;
+    height: 46px;
+    background-color: var(--green-bg);
+    margin-left: -30px;
+    margin-right: 19px;
+}
+
+/******** Division SVG + Lien **********/
+
+.menus {
+    display: flex;
+    cursor: pointer;
+    height: 46px;
+    align-items: center;
+}
+
+.menus a:hover {
+    color: var(--green-bg);
+}
+
+.menus a {
+
+    margin-left: 18px;
+    transition: 0.3s ease;
+}
+
+
+/********* Nav Footer    *********************/
+.navFooter{
+    margin-top: 45%;
+    padding-bottom: 20%;
+}
+
+
+/************* Contenu de la page de droite haut *********/
+
+.content {
+    margin-left: 22%;
+    width: 80%;
+    background-color: var(--main-bg);
+}
+
+.container {
+    text-align: center;
+    margin: 90px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/***************** bloc navigation du haut  partie droite back office***************/
+
+.bloc-back-office-superieur {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 24px;
+    background-color: #FFF;
+}
+
+.bloc-back-office-superieur-button {
+    display: flex;
+    gap: 1rem;
+}
+
+.bloc-back-office-superieur-button input {
+    font-family: var(--main-font);
+    padding: 15px;
+    width: 400px;
+    border: none;
+}
+
+.bloc-back-office-superieur-button input:focus-visible {
+    outline: none;
+}
+
+.bloc-back-office-superieur-input {
+    border: 1px solid #D1D1D1;
+    display: flex;
+    align-items: center;
+}
+
+.bloc-back-office-superieur-input svg {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+/***************************** Boutons **********************/
+
+.bloc-back-office-superieur-bouton-1 {
+    background-color: var(--green-bg);
+    padding: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.bloc-back-office-superieur-bouton-1 svg {
+    fill: #FFF;
+}
+
+.bloc-back-office-superieur-bouton-1 a:hover{
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.bouton-2 {
+    background-color: #FFF;
+    padding: 14px;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/****************************  Liste des pages index Back office *************************************/
+.table {
+    padding: 0;
+    background-color: #FFFFFF;
+}
+
+.delete-option-list-index{
+    width: 20px;
+
+}
+
+thead {
+    background-color: #F2F2F2;
+    font-family: var(--main-font);
+    font-weight: bold;
+    text-align: left;
+}
+
+td {
+    font-family: "Montserrat", sans-serif;
+    text-align: left;
+    padding: 10px;
+}
+
+tr:hover{
+    color: var(--hover-color);
+}
+tr a:hover{
+    color: var(--hover-color);
+}
+
+thead tr th {
+    padding: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tbody tr {
+    border-bottom: 1px solid #D1D1D1;
+}
+
+/*******************************  style des pages new et edit sur le back office**************************/
+.back-central-container {
+    padding: 90px 120px 90px 120px;
+    margin: 0px 90px 90px 90px;
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+}
+
+.back-central-container-title{
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: 90px;
+    padding-top: 90px;
+    justify-content: space-between;
+    margin-right: 90px;
+
+}

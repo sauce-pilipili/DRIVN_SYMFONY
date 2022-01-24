@@ -1,0 +1,22 @@
+{% extends 'baseAdmin.html.twig' %}
+{% block title %}création d'un article{% endblock %}
+    {% block body %}
+        <div class="main">
+            {{ include('_includes/_navigation.html.twig') }}
+            <div class="content">
+                <div class="back-central-container-title">
+                    <h1>Ajout d'un article</h1>
+                    <a class="bouton-2" href="{{ path('articles_index') }}">Quitter <i class="fas fa-times"></i></a>
+                </div>
+                <div class="back-central-container">
+                    {{ include('articles/_form.html.twig') }}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/formulaire.css') }}">
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('js/imagePreview.js') }}"></script>
+{% endblock %}

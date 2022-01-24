@@ -1,0 +1,105 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Demande de démo{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-large section-col">
+        <h1>Votre démo gratuite</h1>
+        <p>Vous souhaitez tester le logiciel avant de vous lancer ? Pour cela, rien de plus simple, il vous suffit simplement de remplir le formulaire ci-dessous. Dés réception de votre demande de démo, nous vous enverrons les accès à la démo.</p>
+    </section>
+
+    <section class="section-bg">
+        <div class="container-large section-col-2 overflow">
+            <div class="cadre-text">
+                <h2 class="font-white">Pourquoi passer par Driv’n ?</h2>
+                <ul class="d-flex-column gap-20">
+                    <li class="font-bold font-white">✓ Une aide de prise de décision</li>
+                    <li class="font-bold font-white">✓ Un tableau de bord personnalisé</li>
+                    <li class="font-bold font-white">✓ Accès au logiciel 24h/24 et 7j/7</li>
+                </ul>
+                <p class="font-white">Ne perdez plus votre temps à prendre des décisions, notre solution vous permet de décider sereinement grâce à des données simplifiées. Vos prises de décision n'auront jamais été aussi simples.</p>
+            </div>
+            <div class="cadre-text">
+                <form class="form" action="">
+                    <div class="d-flex-column gap-10">
+                        <label class="font-white" for="name">Votre prénom</label>
+                        <input type="name" placeholder="Ecrivez votre prénom">
+                    </div>
+                    <div class="d-flex-column gap-10">
+                        <label class="font-white" for="mail">Votre adresse mail</label>
+                        <input type="mail" placeholder="Indiquez votre adresse mail">
+                    </div>
+                    <div class="d-flex-column gap-10">
+                        <label class="font-white" for="messag">Votre demande</label>
+                        <textarea name="message" id="message" cols="30" rows="10">Vous avez des questions ?</textarea>
+                    </div>
+                    <div>
+                        <input class="button-1" type="submit" value="Envoyer ma demande">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-large section-col">
+        <div class="row-1">
+            <h2>Les avis de nos clients</h2>
+            <div class="prevandnext">
+                <div class="prev">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+                <div class="next">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

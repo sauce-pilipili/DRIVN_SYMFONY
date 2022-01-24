@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+{% block meta %}
+    <meta name="description" content="{{ article.metaDescription }}">{% endblock %}
+{% block title %}Drivn - {{ article.title }}{% endblock %}
+
+{% block body %}
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-medium section-article">
+        <div class="article">
+            <h1>{{ article.title }}</h1>
+            <div class="row">
+                <p>{{ article.categorie.name }}</p>
+                <p>|</p>
+                <p>Publié le <span>{{ article.createdDate|date("d-m-Y") }}</span></p>
+            </div>
+            <div>
+                <img src="{{ asset('uploads/'~article.imageEnAvant) }}" alt="{{ article.legendeImageEnAvant }}">
+            </div>
+        </div>
+        <div class="">
+            <h2>{{ article.content| raw }}</h2>
+        </div>
+    </section>
+
+    <section class="container-large section-col">
+        <div class="row-1">
+            <h2>Les dernières actualités</h2>
+            <div class="prevandnext">
+                <div class="prev">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+                <div class="next">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="carousel row">
+            {% for article in articles %}
+                <div class="bloc-article">
+                    <div class="cadre-img">
+                        <img src="{{ asset('uploads/'~article.imageEnAvant) }}" alt="{{ article.legendeImageEnAvant }}">
+                    </div>
+                    <div class="cadre-text">
+                        <div class="row">
+                            <p>{{ article.categorie }}</p>
+                            <p>|</p>
+                            <p>Publié le <span>{{ article.createdDate|date("d-m-Y") }}</span></p>
+                        </div>
+                        <h5>{{ article.title }}</h5>
+                        <p>{{ article.content|slice(0,200) |striptags|raw }}</p>
+                        <a href="{{ path('article',{slug:article.slug}) }}">Lire l'article</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col">
+                    <div class="row">
+                        <h2 class="text-center">Demander votre démo gratuitement</h2>
+                        <p class="text-center">Vous êtes intéressé par nos solutions ? Mais vous n'êtes pas encore sûre
+                            ! N'hésitez pas à demander notre démo gratuite pour tester nos solutions.</p>
+                    </div>
+                    <span class="form-demo" >
+                        {{ form_start(formDemo, {'attr': {'class': 'form-demo'}}) }}
+                        {{ form_row(formDemo.email) }}
+                        {{ form_end(formDemo) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

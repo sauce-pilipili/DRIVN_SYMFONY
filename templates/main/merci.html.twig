@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn{% endblock %}
+
+{% block body %}
+
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-medium section-col">
+        <div class="cadre-text d-column gap-20">
+            <h1 class="text-center"> Merci pour votre abonnement !</h1>
+            <p class="text-center">Nous avons reçu votre demande d'abonnement, vous allez donc recevoir un mail avec vos identifiants de connexion. Dès que vous aurez accès au logiciel, vous pourrez intégrer toutes vos données comptables. Si vous avez besoin d'aide, n'hésitez pas à <a href="contact.html">nous contacter</a>.</p>
+        </div>
+        <div class="d-flex justify-content-center gap-30">
+            <a class="button-1" href="">Aller sur la page d'accueil</a>
+            <a class="button-2" href="">Voir toutes nos actualités</a>
+        </div>
+        <div>
+            <h2 class="text-center">Restons connectés !</h2>
+            <div class="d-flex justify-content-center gap-15">
+                <a href="#"><img src="{{ asset('img/facebook.svg') }}" alt=""></a>
+                <a href="#"><img src="{{ asset('img/instagram.svg') }}" alt=""></a>
+            </div>
+        </div>
+
+    </section>
+
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

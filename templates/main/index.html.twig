@@ -1,0 +1,355 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Votre outil de visualisation de données{% endblock %}
+
+{% block body %}
+    {{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-large section-col-2">
+        <div class="cadre-text">
+            <h1>Votre outil de visualisation de données</h1>
+            <p>Décidez sereinement grâce à des données simplifiées. Vos prises de décision n'auront jamais été aussi
+                simples.</p>
+            <div class="form-demo" >
+                {{ form_start(formDemo, {'attr': {'class': 'form-demo'}}) }}
+                {{ form_row(formDemo.email) }}
+                {{ form_end(formDemo) }}
+            </div>
+        </div>
+        <div class="cadre-img">
+            <img src="{{ asset('img/illustration-drivn.svg') }}" alt="DRIVN">
+        </div>
+    </section>
+
+    <section class="section-bg">
+        <div class="container-large section-col-2">
+            <div class="cadre-img">
+                <img src="{{ asset('img/illustration-prise-de-decision.svg') }}" alt="Aide à la prise de décision">
+            </div>
+            <div class="cadre-text">
+                <h2 class="font-white">Aide à la prise de décision</h2>
+                <p class="font-white font-bold">Nous savons qu’il est parfois difficile de prendre des décisions. C’est
+                    pourquoi nous vous proposons une solution qui vous accompagnera dans la finance d'entreprise et dans
+                    l'investissement immobilier.</p>
+                <p class="font-white">Notre logiciel se présente sous la forme d'un tableau de bord simple et visuel.
+                    Nous savons qu’un visuel est plus compréhensible par tous, en effet notre solution vous propose des
+                    graphiques simples et claires.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container-large section-col-2">
+        <div class="cadre-text">
+            <div class="d-flex-column gap-30">
+                <h2>Un tableau de bord personnalisé</h2>
+                <p>Notre promesse est de vous livrer un tableau de bord moderne. Nous avons tous été confronté à un
+                    moment ou à un autre, à un outil peu performant. </p>
+            </div>
+            <div class="d-flex gap-40">
+                <div>
+                    <img src="{{ asset('img/picto-intuitif.svg') }}" alt="Intuitif">
+                    <p class="font-bold">Intuitif</p>
+                </div>
+                <div>
+                    <img src="{{ asset('img/picto-sur-mesure.svg') }}" alt=Sur-mesure"">
+                    <p class="font-bold">Sur-mesure</p>
+                </div>
+                <div>
+                    <img src="{{ asset('img/picto-securite.svg') }}" alt="Sécurisé">
+                    <p class="font-bold">Sécurisé</p>
+                </div>
+            </div>
+            <h4 class="font-bold">Pour des décisions sereines !</h4>
+        </div>
+        <div class="cadre-img">
+            <img src="{{ asset('img/illustration-dashboard.svg') }}" alt="Tableau de bord personnalisé">
+        </div>
+    </section>
+
+    <section class="section-bg-right">
+        <div class="container-large section-col margin-top-100">
+            <h2 class="text-center">Une solution en fonction de vos besoins</h2>
+            <div class="row">
+                <div class="bloc-blue">
+                    <h3 class="font-white">Finance d'entreprise</h3>
+                    <p class="font-white">Notre solution vous permet des prises de décision sereine grâce à une
+                        vulgarisation des chiffres clés de votre entreprise. Vous pourrez analyser les chiffres sans
+                        l'aide de votre comptable.</p>
+                    <div>
+                        <a class="button-1" href="{{ path('solution_1') }}">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="bloc-white">
+                    <h3>Investir dans l'immobilier</h3>
+                    <p>Notre solution vous permet des prises de décision sereine grâce à une vulgarisation des chiffres
+                        clés de votre entreprise. Vous pourrez analyser les chiffres sans l'aide de votre comptable.</p>
+                    <div>
+                        <a class="button-2" href="{{ path('contact') }}">Contactez-nous</a>
+                    </div>
+                </div>
+                <div class="bloc-white">
+                    <h3>D'autres solutions à venir</h3>
+                    <p>Notre solution vous permet des prises de décision sereine grâce à une vulgarisation des chiffres
+                        clés de votre entreprise. Vous pourrez analyser les chiffres sans l'aide de votre comptable.</p>
+                    <div>
+                        <a class="button-2" href="{{ path('contact') }}">Contactez-nous</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-bg-2">
+        <div class="container-large section-col">
+            <div class="row-1">
+                <h2 class="font-white font-mobile">Les dernières actualités</h2>
+                <a class="font-white font-mobile" href="{{ path('blog',{categorie:'tous'}) }}">Tous voir</a>
+                <div class="prevandnext2">
+                    <div class="prev2">
+                        <img src="{{ asset('img/arrow.svg') }}" alt="">
+                    </div>
+                    <div class="next2">
+                        <img src="{{ asset('img/arrow.svg') }}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row carousel2">
+                {% for article in articles %}
+                    <div class="bloc-article">
+                        <div class="cadre-img">
+                            <img src="{{ asset('uploads/'~article.imageEnAvant) }}" alt="{{ article.legendeImageEnAvant }}">
+                        </div>
+                        <div class="cadre-text">
+                            <div class="row">
+                                <p>{{ article.categorie }}</p>
+                                <p>|</p>
+                                <p>Publié le <span>{{ article.createdDate|date("d-m-Y") }}</span></p>
+                            </div>
+                            <h5>{{ article.title }}</h5>
+                            <p>{{ article.content|slice(0,200) |striptags|raw }}</p>
+                            <a href="{{ path('article',{slug:article.slug}) }}">Lire l'article</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large section-col-center">
+        <h2 class="text-center">Comment ça fonctionne ?</h2>
+        <div class="row-2">
+            <div class="bloc-white">
+                <div class="text-center cadre-text">
+                    <div class="number">1</div>
+                    <h4>Paiement</h4>
+                    <p>Le paiement est réalisé via la plateforme Stripe, vous pouvez payer par carte bancaire et vous
+                        aurez ainsi accès à nos solutions.</p>
+                </div>
+            </div>
+            <div class="cadre-arrow">
+                <img src="{{ asset('img/arrow.svg') }}" alt="">
+            </div>
+            <div class="bloc-white">
+                <div class="text-center cadre-text">
+                    <div class="number">2</div>
+                    <h4>Confirmation</h4>
+                    <p>Après le paiement, vous recevrez un mail de confirmation avec le lien vers la solution et
+                        l'ensemble du processus.</p>
+                </div>
+            </div>
+            <div class="cadre-arrow">
+                <img src="{{ asset('img/arrow.svg') }}" alt="">
+            </div>
+            <div class="bloc-white">
+                <div class="text-center cadre-text">
+                    <div class="number">3</div>
+                    <h4>Configuration</h4>
+                    <p>Intégration de vos données afin d’avoir une visualisation globale et claire grâce à nos
+                        différentes solutions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row-3">
+            <div>
+                <img src="{{ asset('img/windows.svg') }}" alt="Windows">
+                <img src="{{ asset('img/apple.svg') }}" alt="Apple">
+                <img src="{{ asset('img/ios.svg') }}" alt="ios">
+                <img src="{{ asset('img/android.svg') }}" alt="Android">
+            </div>
+            <p>Disponible sur IOS, Android, Mac et PC</p>
+        </div>
+    </section>
+
+    <section class="section-bg-3">
+        <div class="container-large section-col-center">
+            <div class="row-1">
+                <h2 class="font-white font-mobile">Tarifs</h2>
+                <p class="font-white font-mobile text-center">Selon la solution dont vous avez besoin, nous vous
+                    proposons des tarifs qui comprennent les frais de dossier ainsi que l'accès complet à la solution
+                    choisie.</p>
+            </div>
+            <div class="row-2">
+                <div class="bloc-white">
+                    <div class="d-flex-column gap-40">
+                        <div class="d-flex-column gap-20">
+                            <div class="d-flex-column gap-15">
+                                <p>FINANCE D'ENTREPRISE</p>
+                                <div>
+                                    <p>A partir de</p>
+                                    <div class="d-flex align-items-center gap-15">
+                                        <p>
+                                            <span class="price">97</span>
+                                            <span class="price">€</span>
+                                        </p>
+                                        <p class="price-desc">HT / mois</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line-price"></div>
+                            <div>
+                                <ul class="d-flex-column gap-10">
+                                    <li>√ Mises à jour illimités</li>
+                                    <li>√ Accès au logiciel 24h/24 et 7j/7</li>
+                                    <li>√ Export de vos données</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="button-1" href="{{ path('solution_1') }}">En savoir plus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bloc-white">
+                    <div class="d-flex-column gap-40">
+                        <div class="d-flex-column gap-20">
+                            <div class="d-flex-column gap-15">
+                                <p>INVESTIR DANS L'IMMOBILIER</p>
+                                <p class="price">A venir</p>
+                            </div>
+                            <div class="line-price"></div>
+                            <div class="d-flex-column gap-10">
+                                <p>Avec notre solution, décidez sereinement pour votre prochain investissement
+                                    immobilier</p>
+                                <p>√ Accès au logiciel 24h/24 et 7j/7</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="button-2" href="{{ path('contact') }}">Contactez-nous</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bloc-white">
+                    <div class="d-flex-column gap-40">
+                        <div class="d-flex-column gap-20">
+                            <div class="d-flex-column gap-15">
+                                <p>D'AUTRES SOLUTIONS</p>
+                                <p class="price">A venir</p>
+                            </div>
+                            <div class="line-price"></div>
+                            <div class="d-flex-column gap-10">
+                                <p>Nous vous proposerons des solutions en lien avec la crypto-monnaie (analytique)</p>
+                                <p>√ Accès au logiciel 24h/24 et 7j/7</p>
+                            </div>
+                        </div>
+                        <div>
+                            <a class="button-2" href="{{ path('contact') }}">Contactez-nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-3">
+                <img src="{{ asset('img/picto-securite.svg') }}" alt="">
+                <p class="font-white font-mobile text-center">Le paiement de l’abonnement est sécurisé</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-large section-col">
+        <div class="row-1">
+            <h2>Les avis de nos clients</h2>
+            <div class="prevandnext">
+                <div class="prev">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+                <div class="next">
+                    <img src="{{ asset('img/arrow.svg') }}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="carousel">
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et
+                        prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon
+                        objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et
+                        prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon
+                        objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et
+                        prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon
+                        objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bloc-avis">
+                <div class="d-flex-column gap-20">
+                    <p>Adrian a su comprendre le besoin, analyser les possibles pour me proposer des solutions et
+                        prendre en compte mes remarques sur la pratique afin d’aboutir à un outil en lien avec mon
+                        objectif, sur-mesure</p>
+                    <div>
+                        <p class="font-bold">Karine</p>
+                        <p>Accompagnatrice d’entrepreneurs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="section-bg-demo">
+        <div class="section-demo">
+            <div class="cadre-demo">
+                <div class="col">
+                    <div class="row">
+                        <h2 class="text-center">Demander votre démo gratuitement</h2>
+                        <p class="text-center">Vous êtes intéressé par nos solutions ? Mais vous n'êtes pas encore sûre
+                            ! N'hésitez pas à demander notre démo gratuite pour tester nos solutions.</p>
+                    </div>
+                    <span class="form-demo" >
+                        {{ form_start(formDemo1, {'attr': {'class': 'form-demo'}}) }}
+                        {{ form_row(formDemo1.email) }}
+                        {{ form_end(formDemo1) }}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}

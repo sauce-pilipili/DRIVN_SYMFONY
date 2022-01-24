@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Drivn - Les mentions légales{% endblock %}
+
+{% block body %}
+
+{{ include('_includes/_MainNavigation.html.twig') }}
+    <section class="container-medium section-col">
+        <div class="d-flex-column gap-40">
+            <h1>Les mentions légales</h1>
+            <p>D’après la loi n°2004-575 du 21 juin 2004, les mentions légales doivent apparaitre sur un site internet afin de donner des informations sur l’entreprise et sur l’utilisation des données.</p>
+        </div>
+        <div class="d-flex-column gap-40">
+            <h2>Identification de l’entreprise</h2>
+            <div>
+                <ul class="d-flex-column gap-15">
+                    <li><span class="font-bold">Nom de l’entreprise :</span> DRIVN</li>
+                    <li><span class="font-bold">Propriétaire :</span> Adrian Rodriguez</li>
+                    <li><span class="font-bold">N° SIRET :</span></li>
+                    <li><span class="font-bold">N° TVA :</span></li>
+                    <li><span class="font-bold">N° RCS :</span></li>
+                    <li><span class="font-bold">Forme juridique :</span></li>
+                    <li><span class="font-bold">Adresse mail : <a href="mailto:adrian@datareporting.fr ">adrian@datareporting.fr </a></span></li>
+                    <li><span class="font-bold">Personne en charge de la publication :</span> Adrian Rodriguez</li>
+                    <li><span class="font-bold">Hébergeur du site :</span> OVH – 2 rue Kellermann 59100 Roubaix (France)</li>
+                    <li><span class="font-bold">Création du site :</span> <a href="https://agencebackstages.fr">Agence Backstages</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="d-flex-column gap-40">
+            <h2>Utilisation des cookies</h2>
+            <div class="d-flex-column gap-15">
+                <p>Un cookie est un petit fichier informatique, un traceur. Il permet d’analyser le comportement des usagers lors de la visite d’un site internet, de la lecture d’un courrier électronique, de l’installation ou de l’utilisation d’un logiciel ou d’une application mobile.</p>
+                <p>Ce site utilise un service d’analyse d’audience qui génère donc des cookies. Il va permettre d’analyser le comportement de vos usages lors de la visite de notre site internet, et ainsi d’améliorer votre expérience. Dés que vous arrivez sur le site internet, un bandeau en bas de page s’affiche afin de vous demander votre consentement pour que ce service analyse votre visite sur le site.</p>
+                <p>Sachez que la durée de validité du consentement donné dans ce cadre est de 13 mois maximum. Tous les 13 mois, nous redemandons un consentement des visiteurs du site internet pour le traitement des cookies.</p>
+            </div>
+        </div>
+        <div class="d-flex-column gap-40">
+            <h2>Utilisation des données personnelles collectées</h2>
+            <div class="d-flex-column gap-15">
+                <p>Sur le site internet, nous avons mis en place différents types de formulaires qui récupèrent vos données personnelles :</p>
+                <p><span class="font-bold">Formulaire de contact :</span> Votre prénom et adresse e-mail vont nous permettre de répondre à votre demande.</p>
+                <p><span class="font-bold">Formulaire de demande de démo :</span> Votre prénom et adresse e-mail va nous permettre de vous envoyer la démo.</p>
+                <p>À la fin de chaque formulaire, nous vous demandons votre consentement afin de collecter et conserver vos données personnelles.</p>
+            </div>
+        </div>
+        <div class="d-flex-column gap-40">
+            <h2>Transmission de vos données personnelles</h2>
+            <div class="d-flex-column gap-15">
+                <p>Vous pouvez nous écrire à l’adresse <a href="mailto:adrian@datareporting.fr ">adrian@datareporting.fr </a> concernant toutes vos questions sur la protection de vos données personnelles.
+                <p>Les données récoltées via les formulaires ne sont ni collectées ni utilisées par des services tiers.</p>
+            </div>
+        </div>
+        <div class="d-flex-column gap-40">
+            <h2>Durées de stockage de vos données</h2>
+            <div class="d-flex-column gap-15">
+                <p>Nous supprimons automatiquement toutes les données personnelles des personnes inactives depuis 3 ans de notre base de données.</p>
+                <p>Vous pouvez demander, à tout moment, la suppression, la rectification ou la restitution de vos données personnelles. Nous réaliserons cette action dans un délai d’1 mois.</p>
+                <p>Vous pouvez faire une réclamation auprès de la CNIL, si vos droits ne sont respectés.</p>
+            </div>
+        </div>
+        <div>
+            <p class="font-bold">Mis à jour le 13/01/2022.</p>
+        </div>
+    </section>
+    {{ include('_includes/_Footer.html.twig') }}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/carousel.js') }}"></script>
+{% endblock %}
